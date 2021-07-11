@@ -1,2 +1,12 @@
-[user]
-	email = owenchak@gmail.com
+[alias]
+	co = checkout
+    # Delete all local branches but master and the current one, only if they are fully merged with master.
+    delete-all = "!f(){\
+        git branch | grep -v "master" | grep -v ^* | xargs git branch -d;\
+    }; f"
+    # Delete all local branches but master and the current one.
+    delete-all-force= "!f(){\
+        git branch | grep -v "master" | grep -v ^* | xargs git branch -D;\
+    }; f"
+		co = checkout
+
